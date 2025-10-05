@@ -1,0 +1,11 @@
+[Unit]
+Description=Download Raindrop Favicons
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.config/anyrun/download_raindrop_favicons.sh
+
+[Install]
+WantedBy=default.target

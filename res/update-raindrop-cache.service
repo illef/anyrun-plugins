@@ -1,0 +1,12 @@
+[Unit]
+Description=Update Raindrop Cache
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/update-raindrop-cache
+EnvironmentFile=-%h/.config/anyrun/raindrop.env
+
+[Install]
+WantedBy=default.target

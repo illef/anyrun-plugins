@@ -1,0 +1,12 @@
+[Unit]
+Description=Update Logseq Cache
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/update-logseq-cache
+EnvironmentFile=-%h/.config/anyrun/logseq.env
+
+[Install]
+WantedBy=default.target
